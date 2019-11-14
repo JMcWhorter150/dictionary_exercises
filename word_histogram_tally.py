@@ -37,7 +37,7 @@ def count_letters():
         dictionary[character] = character_count
     return dictionary
 
-def sort_histogram(dictionary):
+def sort_histogram_sentence(dictionary):
     # Need to sort values return from count letters
     # Easy to create a simple list of all the values
     # Could also use list(dictionary.values())
@@ -55,10 +55,29 @@ def sort_histogram(dictionary):
         big_key2 = get_key(values[-2], dictionary)
         big_key3 = get_key(values[-3], dictionary)
         # the return prints the values here
+        # specifically prints words. If you call the word function, formatting needs to be changed
         return print(f"""The top three words are:
     {dictionary[big_key1]}
     {dictionary[big_key2]}
     {dictionary[big_key3]}""")
+
+def sort_histogram_word(dictionary):
+    values = []
+    for value in dictionary.values():
+        values.append(value)
+    values.sort()
+    if len(values) < 3:
+        return print("Your word needs to be at least three letters.")
+    else:
+        big_key1 = get_key(values[-1], dictionary)
+        big_key2 = get_key(values[-2], dictionary)
+        big_key3 = get_key(values[-3], dictionary)
+        return print(f"""The top three letters are:
+    {dictionary[big_key1]}
+    {dictionary[big_key2]}
+    {dictionary[big_key3]}""")
+
     
-sort_histogram(count_words())
+# sort_histogram(count_words())
+# sort_histogram(count_letters())
         
