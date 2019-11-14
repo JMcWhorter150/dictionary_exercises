@@ -20,7 +20,7 @@ def print_main_menu():
     return user_selection
 # 1. Ask them for a person's name, then looks up persons phone number and prints it to the screen
 def lookup_entry(dictionary):
-    name = input("Please enter a name. ")
+    name = input("Name: ")
     print()
     print(dictionary[name])
     print()
@@ -29,8 +29,8 @@ def lookup_entry(dictionary):
 # 2. Prompt them for a name and person's phone number
 def set_entry(dictionary):
     print()
-    name = input("Please enter a name. ")
-    number = input("Please enter their phone number. ")
+    name = input("Name: ")
+    number = input("Phone Number: ")
     print()
     dictionary[name] = number
     return dictionary
@@ -38,7 +38,7 @@ def set_entry(dictionary):
 # print(DICT)
 # 3. Prompt them for a name and delete entire entry
 def delete_entry(dictionary):
-    name = input("Please enter a name. ")
+    name = input("Name: ")
     print()
     print(f"{name} has been deleted.")
     print()
